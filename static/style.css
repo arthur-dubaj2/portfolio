@@ -1,0 +1,292 @@
+/* Application globale de la police */
+* {
+    font-family: 'Andale Mono', monospace;
+}
+
+body {
+    background-image: url('/static/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+
+h2 i {
+    font-size: 1.2em;
+    color: #525049; 
+    margin-left: 10px;
+}
+
+#buttons-container {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.circle-button {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    pointer-events: all;
+}
+
+.circle-button img {
+    width: 70%;  /* Ajuste la taille de l’image */
+    height: 70%;
+    object-fit: contain;
+}
+
+.circle-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+/* Position des boutons autour du personnage */
+#btn1 { top: 27%; left: 35%; } /* TIPE */
+#btn2 { top: 37%; left: 25%; } /* JE */
+#btn3 { top: 54%; left: 21%; } /* ENSIMAG */
+#btn4 { top: 69%; left: 25%; } /* App poker */
+#btn5 { top: 35%; left: 68%; } /* Cuisine */
+#btn6 { top: 48%; left: 75%; } /* Poker */
+#btn7 { top: 65%; left: 72%; } /* Jeux de société */
+#btn8 { top: 5%; left: 95%; }  /* Mail */
+#btn9 { top: 15%; left: 95%; } /* liens */
+
+
+
+/* Styles pour la fenêtre modale */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+
+    animation: fadeIn 0.5s ease-out;
+}
+
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 20; /* Assurez-vous que le contenu de la modale est au-dessus de l'arrière-plan */
+}
+
+/* Style pour les listes dans les modales */
+.modal-content ul {
+    text-align: left;
+    max-width: 80%;
+    margin: 0 auto;
+    padding-left: 40px;
+}
+
+.modal-content li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.modal-image{
+    width: 80%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Styles pour l'accordéon */
+.accordion {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    margin-bottom: 5px;
+}
+
+.accordion-header {
+    background-color: #f4f4f4;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #e4e4e4;
+}
+
+.accordion-content {
+    padding: 0 15px;
+    max-height: 0;
+    overflow-y: auto; 
+    transition: max-height 0.3s ease;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 400px; 
+    padding: 15px;
+}
+
+/* Style de la barre de défilement */
+.accordion-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.accordion-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.accordion-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.accordion-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Style pour l'image cliquable avec animation */
+.blinking-image {
+    display: inline-block;
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.blinking-image:hover {
+    animation: none;
+    opacity: 1;
+}
+
+.small-image img {
+    width: 30%; 
+    height: auto;
+}
+
+/* Styles pour le formulaire de contact */
+.form-group {
+    margin-bottom: 20px;
+    width: 97%;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #525049;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #3d3c36;
+}
+
+.submit-btn i {
+    margin-left: 8px;
+}
+
+/* Effet machine à écrire */
+#main_text {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 2em;
+    color: #333;
+}
+
+.typewriter {
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: 0;
+    animation: typing 8s steps(130) forwards;
+}
+
+
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 80%; }
+}
+
+
+
+/*yeux*/
+#eyes_black {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.eyes_black {
+    position: absolute;
+    width: 10px; 
+    height: 10px; 
+}
+
+.eyes_black img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
