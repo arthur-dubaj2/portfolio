@@ -248,8 +248,7 @@ h2 i {
 #main_text {
     position: absolute;
     top: 5%;
-    left: 15%;
-    transform: translateX(-50%);
+    left: 5%;
     font-size: 2em;
     color: #333;
 }
@@ -260,29 +259,17 @@ h2 i {
     overflow: hidden;
     position: relative;
     width: 0;
-    animation: typing 3s steps(30) forwards;
+    animation: typing 8s steps(130) forwards;
 }
 
-.typewriter::after {
-    content: '';
-    position: absolute;
-    right: 0px;
-    top: 0;
-    height: 1.1em;  /* Augmenté la hauteur */
-    width: 3px;     /* Augmenté l'épaisseur */
-    background: black;
-    animation: blink 0.8s infinite;
-}
+
 
 @keyframes typing {
     from { width: 0; }
-    to { width: 22%; }
+    to { width: 80%; }
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
+
 
 /*yeux*/
 #eyes_black {
